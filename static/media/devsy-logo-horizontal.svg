@@ -1,4 +1,5 @@
 <svg width="557" height="183" viewBox="0 0 557 183" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- B1 Asymmetric Grid Icon -->
   <g transform="translate(10, 10) scale(1.35)">
     <rect x="12" y="12" width="48" height="48" rx="10" fill="#6366F1"/>
     <text x="26" y="44" font-family="monospace" font-size="20" fill="white">&gt;_</text>
@@ -9,5 +10,12 @@
     <rect x="74" y="66" width="34" height="42" rx="8" fill="#C4B5FD"/>
   </g>
 
-  <text x="192" y="115" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif" font-size="80" font-weight="500" fill="#1E293B" letter-spacing="0.02em">Devsy</text>
+  <!-- "Devsy" in JetBrains Mono Medium (SVG paths) -->
+  <g transform="translate(195, 62) scale(1, 1)" fill="#1E293B">
+    <path d="M88 0V730H284Q355 730 407.5 702.5Q460 675 489.0 625.5Q518 576 518 509V222Q518 155 489.0 105.0Q460 55 407.5 27.5Q355 0 284 0ZM187 88H284Q347 88 383.0 124.0Q419 160 419 222V509Q419 571 383.0 606.5Q347 642 284 642H187Z" transform="translate(0, 60) scale(0.082, -0.082)"/>
+    <path d="M300 -10Q201 -10 140.5 49.0Q80 108 80 210V340Q80 442 140.5 501.0Q201 560 300 560Q366 560 415.5 533.5Q465 507 492.5 459.5Q520 412 520 349V250H177V202Q177 142 210.0 108.0Q243 74 300 74Q348 74 379.0 92.0Q410 110 416 142H515Q505 72 446.0 31.0Q387 -10 300 -10ZM177 349V323H423V349Q423 412 391.0 446.0Q359 480 300 480Q241 480 209.0 446.0Q177 412 177 349Z" transform="translate(49.2, 60) scale(0.082, -0.082)"/>
+    <path d="M236 0 50 550H155L272 189Q282 157 290.0 126.5Q298 96 302 78Q306 96 313.0 126.5Q320 157 330 189L446 550H551L364 0Z" transform="translate(98.4, 60) scale(0.082, -0.082)"/>
+    <path d="M278 -8Q184 -8 132.0 34.0Q80 76 80 152H178Q178 116 204.5 95.5Q231 75 278 75H322Q371 75 397.5 96.0Q424 117 424 155Q424 222 358 230L210 251Q151 260 119.0 299.5Q87 339 87 402Q87 476 137.0 517.0Q187 558 277 558H321Q405 558 457.0 518.0Q509 478 512 412H412Q410 440 386.0 458.5Q362 477 321 477H277Q232 477 207.5 457.0Q183 437 183 403Q183 348 238 341L377 321Q520 302 520 155Q520 77 468.5 34.5Q417 -8 322 -8Z" transform="translate(147.6, 60) scale(0.082, -0.082)"/>
+    <path d="M175 -180 255 33 50 550H155L279 225Q287 204 295.0 180.0Q303 156 306 138Q309 156 316.0 180.0Q323 204 331 225L446 550H551L278 -180Z" transform="translate(196.8, 60) scale(0.082, -0.082)"/>
+  </g>
 </svg>
