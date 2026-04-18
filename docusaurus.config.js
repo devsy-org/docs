@@ -23,13 +23,7 @@ module.exports = {
         target: "_self",
       },
       items: [
-        {
-          href: "https://devsy.sh/",
-          label: "Website",
-          position: "left",
-          target: "_self",
-        },
-        {
+{
           to: "/docs/what-is-devsy",
           label: "Docs",
           position: "left",
