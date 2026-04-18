@@ -35,12 +35,6 @@ module.exports = {
           position: "left",
         },
         {
-          href: "https://devsy.sh/blog",
-          label: "Blog",
-          position: "left",
-          target: "_self",
-        },
-        {
           href: "https://github.com/devsy-org/devsy",
           className: "github-link",
           "aria-label": "GitHub",
@@ -65,12 +59,12 @@ module.exports = {
           editUrl: "https://github.com/devsy-org/docs/edit/main/",
         },
         theme: {
-          customCss: require.resolve("./src/css/custom.css"),
+          customCss: require.resolve("./src/scss/custom.scss"),
         },
       },
     ],
   ],
-  plugins: [],
+  plugins: ['docusaurus-plugin-sass'],
   scripts: [
     {
       src: "https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js",

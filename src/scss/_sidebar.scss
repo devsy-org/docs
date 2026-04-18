@@ -1,0 +1,101 @@
+// ============================================================================
+// Sidebar
+// ============================================================================
+@use 'variables' as *;
+
+// --- Scrollbar ---
+.menu {
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: transparent;
+    border-radius: $radius-full;
+    transition: background $transition-smooth;
+  }
+
+  &:hover::-webkit-scrollbar-thumb {
+    background: var(--devsy-border);
+  }
+}
+
+// --- Menu links ---
+.menu__link {
+  font-size: $font-size-sm;
+  font-weight: 400;
+  color: var(--devsy-text-body);
+  border-radius: $radius-md;
+  padding: $space-2 $space-3;
+  outline: none;
+  transition: color $transition-base, background-color $transition-base;
+
+  &:hover {
+    color: var(--ifm-color-primary);
+    background: var(--devsy-bg-subtle);
+  }
+
+  &--active {
+    color: var(--ifm-color-primary) !important;
+    font-weight: 600;
+    background: transparent;
+  }
+}
+
+// --- Category labels (top-level) ---
+.menu > .menu__list > .menu__list-item {
+  margin: $space-6 0 $space-2;
+}
+
+.menu > .menu__list > .menu__list-item > .menu__link--sublist {
+  pointer-events: none;
+  color: var(--devsy-text-muted) !important;
+  font-size: $font-size-xs;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: $space-1 $space-3;
+
+  &::after {
+    display: none;
+  }
+}
+
+// --- Nested items ---
+.menu__list-item > .menu__list .menu__list-item {
+  margin: 0 !important;
+  padding: 0 0 $space-1 $space-4;
+}
+
+.menu__list-item > .menu__list .menu__link {
+  position: relative;
+  margin: 0 !important;
+  padding: $space-1 $space-2;
+  background: transparent;
+  font-size: $font-size-sm;
+}
+
+// --- Deeper nesting ---
+.menu > .menu__list > .menu__list-item > .menu__list
+  .menu__list-item:not(.menu__list-item--collapsed)
+  .menu__list {
+  font-size: 0.85em;
+  margin-top: $space-1;
+}
+
+// --- Collapse chevrons ---
+.menu__caret,
+.menu__link--sublist-caret::after {
+  transition: transform $transition-expand;
+}
+
+// --- Bottom divider for last sidebar section ---
+.menu > .menu__list > .menu__list-item:last-child {
+  margin-top: $space-6;
+  padding-top: $space-6;
+  border-top: 1px solid var(--devsy-border);
+}

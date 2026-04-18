@@ -1,0 +1,91 @@
+// ============================================================================
+// Base — Infima overrides & CSS custom properties
+// ============================================================================
+@use 'variables' as *;
+
+// --- Light Theme ---
+:root {
+  // Primary palette
+  --ifm-color-primary:          #{$indigo-500};
+  --ifm-color-primary-dark:     #{$indigo-600};
+  --ifm-color-primary-darker:   #{$indigo-700};
+  --ifm-color-primary-darkest:  #{$indigo-800};
+  --ifm-color-primary-light:    #{$indigo-400};
+  --ifm-color-primary-lighter:  #{$violet-500};
+  --ifm-color-primary-lightest: #{$violet-400};
+
+  // Semantic
+  --ifm-color-success: #{$color-success};
+  --ifm-color-info:    #{$color-info};
+  --ifm-color-warning: #{$color-warning};
+  --ifm-color-danger:  #{$color-danger};
+
+  // Links
+  --ifm-link-color: #{$indigo-500};
+  --ifm-link-hover-color: #{$indigo-700};
+  --ifm-navbar-link-hover-color: #{$indigo-600};
+
+  // Typography
+  --ifm-font-family-base: #{$font-sans};
+  --ifm-font-family-monospace: #{$font-mono};
+  --ifm-font-size-base: #{$font-size-base};
+  --ifm-line-height-base: #{$line-height-normal};
+  --ifm-heading-font-weight: 600;
+
+  // Spacing & layout
+  --ifm-navbar-height: #{$navbar-height};
+  --ifm-spacing-horizontal: #{$space-6};
+
+  // Borders & radius
+  --ifm-global-radius: #{$radius-md};
+  --ifm-code-border-radius: #{$radius-sm};
+
+  // Custom tokens
+  --devsy-bg-subtle: #{$slate-50};
+  --devsy-border: #{$slate-200};
+  --devsy-text-muted: #{$slate-500};
+  --devsy-text-body: #{$slate-700};
+  --devsy-text-heading: #{$slate-800};
+  --devsy-shadow-sm: #{$shadow-sm};
+  --devsy-shadow-md: #{$shadow-md};
+}
+
+// --- Dark Theme ---
+[data-theme='dark'] {
+  --ifm-color-primary:          #{$indigo-400};
+  --ifm-color-primary-dark:     #{$indigo-500};
+  --ifm-color-primary-darker:   #{$indigo-600};
+  --ifm-color-primary-darkest:  #{$indigo-700};
+  --ifm-color-primary-light:    #{$violet-400};
+  --ifm-color-primary-lighter:  #{$violet-300};
+  --ifm-color-primary-lightest: #{$indigo-200};
+
+  --ifm-link-color: #{$violet-400};
+  --ifm-link-hover-color: #{$violet-300};
+  --ifm-navbar-link-hover-color: #{$violet-300};
+
+  --ifm-background-color: #{$slate-900};
+  --ifm-background-surface-color: #{$slate-800};
+
+  --devsy-bg-subtle: #{$slate-800};
+  --devsy-border: #{$slate-700};
+  --devsy-text-muted: #{$slate-400};
+  --devsy-text-body: #{$slate-200};
+  --devsy-text-heading: #fff;
+  --devsy-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+  --devsy-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+}
+
+// --- Global resets ---
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  color: var(--devsy-text-body);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--devsy-text-heading);
+}

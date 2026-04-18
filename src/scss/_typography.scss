@@ -1,0 +1,105 @@
+// ============================================================================
+// Typography
+// ============================================================================
+@use 'variables' as *;
+
+// --- Google Fonts import ---
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+// --- Markdown content ---
+.markdown {
+  position: relative;
+  --ifm-h2-vertical-rhythm-top: 1.8;
+
+  h2 {
+    font-size: $font-size-2xl;
+    font-weight: 700;
+    margin-top: 2.4em;
+    line-height: $line-height-tight;
+    padding-bottom: $space-2;
+    border-bottom: 1px solid var(--devsy-border);
+  }
+
+  h3 {
+    font-size: $font-size-xl;
+    font-weight: 600;
+    margin-top: 2em;
+    line-height: $line-height-tight;
+  }
+
+  h4 {
+    font-size: 1.15em;
+    font-weight: 600;
+    margin-bottom: $space-2;
+  }
+
+  h2 + h3 {
+    margin-top: 1.5em !important;
+  }
+
+  p {
+    line-height: $line-height-relaxed;
+  }
+
+  // Tighten list spacing after paragraphs
+  p + ul,
+  p + ol {
+    margin-top: calc(-0.5 * var(--ifm-paragraph-margin-bottom));
+    margin-bottom: calc(0.8 * var(--ifm-paragraph-margin-bottom));
+  }
+
+  ul > li {
+    margin-top: 0 !important;
+  }
+
+  // Inline code
+  *:not(pre) > code,
+  .contents code {
+    white-space: nowrap;
+    font-size: 0.9em;
+    padding: 0.15em 0.4em;
+    background: var(--devsy-bg-subtle);
+    border: 1px solid var(--devsy-border);
+    border-radius: $radius-sm;
+    color: var(--ifm-color-primary-dark);
+  }
+
+  [data-theme='dark'] & *:not(pre) > code {
+    background: $slate-800;
+    border-color: $slate-700;
+    color: var(--ifm-color-primary-light);
+  }
+}
+
+// --- Figures ---
+.markdown figure {
+  margin: $space-4 0 $space-8;
+
+  &:last-child {
+    margin-bottom: $space-5;
+  }
+
+  &.stretch,
+  &.stretch img {
+    width: 100%;
+  }
+
+  &.frame img,
+  &.frame video {
+    width: 100%;
+    border: 1.5px solid var(--devsy-border);
+    border-radius: $radius-lg;
+    box-shadow: var(--devsy-shadow-sm);
+  }
+}
+
+.markdown figcaption {
+  position: relative;
+  width: 100%;
+  margin-top: $space-2;
+  text-align: center;
+  font-size: $font-size-sm;
+  color: var(--devsy-text-muted);
+  line-height: 1.4;
+  z-index: 1;
+}

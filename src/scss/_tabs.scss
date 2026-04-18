@@ -1,0 +1,70 @@
+// ============================================================================
+// Tabs
+// ============================================================================
+@use 'variables' as *;
+
+ul[role='tablist'] {
+  margin-top: -0.6em;
+  border-bottom: none;
+}
+
+.tabs {
+  border-bottom: 1px solid var(--devsy-border);
+}
+
+.tabs__item {
+  font-size: $font-size-sm;
+  font-weight: 500;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  padding: $space-3 $space-5;
+  transition: color $transition-base, border-color $transition-base;
+
+  &--active {
+    border-bottom: 2px solid var(--ifm-color-primary);
+    color: var(--ifm-color-primary);
+  }
+}
+
+ul[role='tablist'] li,
+ul[role='tablist'] li:hover {
+  background: transparent;
+  padding: $space-2 $space-5;
+}
+
+ul[role='tablist'] li:not([aria-selected='true']):hover {
+  border-bottom-color: $slate-400;
+}
+
+// --- Tab panels ---
+[role='tabpanel'] {
+  background-color: $indigo-50;
+  padding: $space-5;
+  margin: 0 -0.2em $space-6 !important;
+  border: 1px solid $indigo-200 !important;
+  border-radius: $radius-md;
+}
+
+[role='tabpanel'] [role='tabpanel'] {
+  background-color: #fff;
+  margin-left: -5px !important;
+  margin-right: -5px !important;
+  border-radius: $radius-sm;
+}
+
+[data-theme='dark'] [role='tabpanel'] {
+  background-color: $slate-800;
+  border-color: $slate-700 !important;
+}
+
+[data-theme='dark'] [role='tabpanel'] [role='tabpanel'] {
+  background-color: $slate-900;
+}
+
+.tabs + div {
+  margin-top: 0 !important;
+}
+
+div[role='tabpanel'] {
+  border-bottom: 1px solid var(--devsy-border);
+}

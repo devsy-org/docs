@@ -1,0 +1,28 @@
+// ============================================================================
+// Admonitions (note, tip, info, caution, danger)
+// ============================================================================
+@use 'variables' as *;
+
+.markdown .admonition {
+  margin-left: -1px;
+  border-radius: $radius-lg;
+  border-left-width: 4px;
+  box-shadow: var(--devsy-shadow-sm);
+
+  code {
+    background: rgba(0, 0, 0, 0.08);
+  }
+}
+
+.admonition-note code {
+  background: rgba(0, 0, 0, 0.08);
+}
+
+// --- Link colors inside colored admonitions ---
+.admonition-warning a,
+.admonition-info a,
+.admonition-warning a:hover,
+.admonition-info a:hover {
+  color: var(--ifm-link-color);
+  text-decoration: underline;
+}
