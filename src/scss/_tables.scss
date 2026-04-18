@@ -1,0 +1,39 @@
+// ============================================================================
+// Tables
+// ============================================================================
+@use 'variables' as *;
+
+table {
+  font-size: $font-size-sm;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: $radius-lg;
+  overflow: hidden;
+  border: 1px solid var(--devsy-border);
+
+  thead > tr {
+    border-top: none;
+    background: var(--devsy-bg-subtle);
+  }
+
+  th {
+    font-weight: 600;
+    font-size: $font-size-xs;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--devsy-text-muted);
+  }
+
+  th:first-child:empty {
+    opacity: 0;
+    border: none;
+  }
+
+  td {
+    border-color: var(--devsy-border);
+  }
+
+  tr:hover td {
+    background: var(--devsy-bg-subtle);
+  }
+}

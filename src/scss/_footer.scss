@@ -1,0 +1,25 @@
+// ============================================================================
+// Footer
+// ============================================================================
+@use 'variables' as *;
+
+.footer {
+  border-top: 1px solid var(--devsy-border);
+  background: var(--devsy-bg-subtle);
+  padding: $space-8 0;
+
+  &--dark {
+    background: $slate-900;
+    border-top-color: $slate-700;
+  }
+}
+
+.footer__copyright {
+  font-size: $font-size-sm;
+  color: var(--devsy-text-muted);
+
+  a {
+    color: var(--ifm-color-primary);
+    font-weight: 500;
+  }
+}

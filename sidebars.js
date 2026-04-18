@@ -255,10 +255,5 @@ module.exports = {
       type: "doc",
       id: "licenses/devsy",
     },
-    {
-      type: "link",
-      label: "community maintained",
-      href: "https://github.com/devsy-org/devsy",
-    },
   ],
 };
