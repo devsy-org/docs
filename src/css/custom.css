@@ -154,8 +154,8 @@ ul ul .table-of-contents__link--active::before {
   --ifm-color-primary-lighter: #8B5CF6;
   --ifm-color-primary-lightest: #A78BFA;
 
-  /* B4 Emerald accent */
-  --ifm-color-success: #10B981;
+  /* Violet accent (matches logo grid) */
+  --ifm-color-success: #8B5CF6;
   --ifm-color-info: #6366F1;
   --ifm-color-warning: #F59E0B;
   --ifm-color-error: #EF4444;
