@@ -176,6 +176,14 @@ Predefined options:
 - **PROVIDER_CONTEXT**: The provider context. (Only available for local options, commands and non-machine providers)
 - **PROVIDER_FOLDER**: The provider folder where the provider config is saved in, can be used to save global information about the provider such as global session tokens etc. (Only available for local options, commands and non-machine providers)
 
+### Logging environment
+
+The following contract describes source changes that require coordinated rollout. Check the versions in use before relying on it.
+
+Devsy passes `DEVSY_LOG_LEVEL` and `DEVSY_LOG_FORMAT` to provider commands. When JSON is selected, provider diagnostics use structured JSON on stderr. `DEVSY_LOG_LEVEL` controls the diagnostic threshold. The CLI defaults to `warn`; an agent or provider started independently defaults to `info`. For the CLI, `LOG_LEVEL` is the context fallback when the canonical level is not set. The effective CLI level is forwarded to Devsy children.
+
+Provider options can contain credentials. Do not log option values, credentials, environment dumps or command arguments. See [provider output](./binaries.mdx#provider-output) for the stream contract.
+
 ## Option Groups
 
 :::info

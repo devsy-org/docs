@@ -89,6 +89,20 @@ You can also use binaries within the option `command` attribute. For example:
      command: ${MY_BINARY} retrieve-option
  ```
 
+## Provider output
+
+This section describes the intended source contract. It does not imply that released host or provider binaries already support it.
+
+Provider stdout carries command results such as status, find, architecture, describe and token values, or raw user protocol bytes. It is not a diagnostic log sink. Write diagnostics to stderr. When JSON is selected, records contain `ts`, a lowercase `level`, `msg` and structured attributes. Host streamers preserve severity and nested attribute types.
+
+When using the core logger, attach typed `slog.Attr` values to the context with `WithContext` and use the context logging methods. Use the canonical attributes for workspace, machine, provider, component, operation, phase, duration and error code. Do not log credentials, option values, environment dumps or command arguments.
+
+Runtime SDK providers can explicitly adopt `NewPluginLogger` from the SDK logging helper. It accepts `json`, `text`, `plain` and `auto`. `plain` aliases `text`, and `auto` selects JSON. An unsupported format such as `logfmt` falls back to JSON with a sanitized warning. The core CLI and core backed producers also support `logfmt`. The SDK helper package uses only the Go standard library. The SDK as a whole has other dependencies. Keep the SDK handshake and execution streams reserved for their existing protocols.
+
+Update the host before relying on new provider output. The new host parser accepts installed providers that emit legacy text or JSON diagnostics. Providers that import the older core logger must adapt their initialization when intentionally upgrading core. An indirect SDK dependency alone does not make a provider an SDK plugin.
+
+Source merges and published SDK, core and provider versions are separate steps. Provider artifacts and Homebrew updates also require their own publication. Do not assume source changes are available in released binaries.
+
 ## Use binaries on the agent side
 
 You can also define binaries Devsy should install on the agent side through `agent.binaries`. These binaries can then be used within the `agent.exec` section to automatically stop a virtual machine if inactive.
