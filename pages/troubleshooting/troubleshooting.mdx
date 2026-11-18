@@ -19,3 +19,18 @@ exec $SHELL -c 'exec /Applications/Devsy.app/Contents/MacOS/Devsy'
 
 Devsy relies on an active SSH session to perform port forwarding to the local host. When running Devsy without an IDE, such as `--ide none`,
 an active SSH session needs to be open using `devsy ssh {workspace}` (unless you are specifying forwarded ports using docker compose).
+
+### Output and diagnostics
+
+The following describes the intended source contract, not a claim that it is available in existing releases. The flag cutover removes older Devsy logging flags. Coordinate CLI and Desktop upgrades so they use compatible versions.
+
+Four settings control independent concerns:
+
+- `--log-level` or `DEVSY_LOG_LEVEL` selects `error`, `warn`, `info`, `debug` or `trace` diagnostics on stderr. The CLI defaults to `warn`. An independently started agent or provider defaults to `info`. For the CLI, `LOG_LEVEL` is the context fallback.
+- `--log-format` or `DEVSY_LOG_FORMAT` selects `auto`, `text`, `plain`, `json` or `logfmt` diagnostics. `plain` aliases `text`. CLI auto uses stderr terminal, UI and internal command context. Provider settings are case insensitive and are not trimmed. Providers resolve an empty format or `auto` to JSON, even on a terminal. SDK plugin helpers warn and use JSON for invalid formats. Strict providers reject them before starting an operation. See [provider output](../developing-providers/binaries.mdx#provider-output).
+- `--result-format` or `DEVSY_RESULT_FORMAT` selects `auto`, `text`, `plain` or `json` for Devsy results and status. `text` aliases `plain`.
+- `--no-status` or `DEVSY_NO_STATUS` suppresses status presentation only. It does not hide errors or recorded events.
+
+Ordinary commands write results and status to stdout and diagnostics and command errors to stderr. CI, workspace exec and SSH are exceptions that preserve child stdout, stderr and exit codes. CI and exec can also put Devsy metadata on stderr. Arbitrary child bytes can share that stream, so it is not reliably demultiplexable as NDJSON. The result format controls Devsy metadata, not user bytes. Do not assume universal framing or prefixes for these streams.
+
+The telemetry identity change intentionally resets prior analytics identities. Source changes and a local build do not prove that artifacts are available or qualified. Publication and deployment depend on repository automation. A source merge can start an automated release chain. Update the host before relying on new provider diagnostics, and check the versions actually installed. The new host parser accepts legacy provider text and JSON.
